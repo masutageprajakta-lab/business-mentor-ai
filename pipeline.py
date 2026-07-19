@@ -46,9 +46,17 @@ def answer_question(question):
     # nothing hardcoded matched confidently -> ask the AI
     ai_answer = ask_ai(question)
     if not ai_answer:
-       return (
-        "I couldn't understand your question.\n\n"
-        "Please check the spelling and try again."
+      return (
+        "❌ Sorry, I couldn't find an answer in my business knowledge base.\n\n"
+        "Please check your spelling or try asking about topics such as:\n"
+        "• GST\n"
+        "• Sales\n"
+        "• Marketing\n"
+        "• SWOT Analysis\n"
+        "• Government Schemes\n"
+        "• Business Plan\n"
+        "• Pricing\n"
+        "• Customer Service"
     )
 
     if not any(signal in ai_answer.lower() for signal in _AI_FAILURE_SIGNALS):
