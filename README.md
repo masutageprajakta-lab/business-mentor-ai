@@ -114,4 +114,8 @@ business_mentor/
 - More business knowledge
 - Better recommendation engine
 - Voice input
-- Multilingual support
+- Multilingual support 
+
+## Live Demo
+
+https://business-mentor-ai-3kdjffkrlr2uitaant9kpc.streamlit.app/
