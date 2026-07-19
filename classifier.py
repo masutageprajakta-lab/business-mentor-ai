@@ -1,21 +1,17 @@
 """
 classifier.py
 
-Takes a raw question typed by the user and decides which knowledge
-module (finance, sales, risk, etc.) it belongs to.
+Classifies a user's business-related question into the most relevant
+knowledge module (such as finance, marketing, sales, legal, or risk).
 
-How it works:
-1. For every module, count how many of its keywords appear in the
-   question (as whole words/phrases, not substrings — so "sale" in
-   keywords doesn't accidentally match "wholesale").
-2. Multi-word phrases (e.g. "emergency fund") count MORE than single
-   words, since they're a stronger signal of the topic.
-3. If a word isn't an EXACT match (e.g. the user typed "governemt"
-   instead of "government"), we also try a fuzzy match — this catches
-   typos so a single misspelled word doesn't derail classification.
-4. The module with the highest score wins. If nothing scores above
-   the threshold, return None — this tells the pipeline to fall back
-   to search_engine.py (the AI API) instead of guessing wrong.
+Working:
+1. Compares the user's question against predefined keywords for each module.
+2. Gives higher importance to multi-word phrases (e.g., "emergency fund")
+   because they provide stronger context.
+3. Uses fuzzy matching to handle minor spelling mistakes and typing errors.
+4. Returns the module with the highest confidence score.
+5. If no suitable module is found, the system returns None so the
+   application can use the AI fallback instead of making an incorrect match.
 """
 
 import re

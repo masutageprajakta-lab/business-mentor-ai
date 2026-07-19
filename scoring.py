@@ -1,3 +1,10 @@
+"""
+scoring.py
+
+Calculates Financial, Market, Founder, and Overall Readiness scores
+and generates business recommendations.
+"""
+
 
 print("NEW SCORING FILE LOADED")
 from search_engine import ask_ai

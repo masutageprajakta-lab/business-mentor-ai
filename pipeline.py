@@ -1,21 +1,9 @@
 """
 pipeline.py
 
-The single function your Streamlit app calls for every user question.
-This is the piece that ties your separate scripts together.
-
-Flow:
-  question
-    -> classifier.get_best_module()      (which knowledge module?)
-    -> retriever.retrieve_card()          (which card in that module?)
-    -> response_generator.generate_response()   (format it nicely)
-  if that comes back empty -> search_engine.ask_ai()  (Gemini API)
-  if the AI ITSELF is unavailable (rate limit / overload) ->
-    retriever.retrieve_best_effort()  (a looser, system-wide search
-    across every module, so the user still gets something useful and
-    on-topic instead of a dead-end error message)
+Coordinates the complete question-answering pipeline by connecting
+the classifier, retriever, response generator, and AI fallback.
 """
-
 from classifier import get_best_module
 from retriever import retrieve_card, retrieve_best_effort
 from response_generator import generate_response

@@ -8,7 +8,7 @@ This is your whole product in one file:
 2. A readiness report (scoring.py) shown right after.
 3. A chat box below it where the user can ask anything — answered by
    pipeline.py, which uses your hardcoded knowledge first and the
-   Claude API as a fallback for anything not covered.
+   Gemini API as a fallback for anything not covered.
 """
 
 import streamlit as st

@@ -1,19 +1,8 @@
 """
 retriever.py
 
-Once classifier.py has decided WHICH module a question belongs to
-(e.g. "finance"), retriever.py's job is to find the single best card
-INSIDE that module to answer the question.
-
-Each module is a dict like:
-    {
-      "emergency fund": {"definition": ..., "importance": ..., ...},
-      "cash flow": {...},
-    }
-
-We compare the user's question against each card's topic name +
-definition text, using simple word-overlap plus a fuzzy string match
-(difflib), and return the best one if it clears a minimum score.
+Retrieves the most relevant knowledge card from the selected module
+using keyword matching, alias matching, substring matching, and fuzzy matching.
 """
 
 from difflib import SequenceMatcher, get_close_matches

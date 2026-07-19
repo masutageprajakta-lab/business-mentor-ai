@@ -1,31 +1,8 @@
 """
 search_engine.py
 
-Fallback for any question the classifier/retriever couldn't confidently
-answer from your hardcoded knowledge files. Instead of saying "I don't
-know", this calls Google's Gemini API (free tier) to generate an answer
-in the same friendly, beginner-first tone as your knowledge cards.
-
-SETUP (one-time, no credit card needed):
-1. Go to https://aistudio.google.com/app/apikey and sign in with any
-   Google account.
-2. Click "Create API key". Copy it — it looks like: AIzaSy...
-3. Install the SDK:  pip install google-genai
-4. Store the key as an environment variable (never paste it directly
-   into this file):
-       Mac/Linux:   export GEMINI_API_KEY="AIzaSy..."
-       Windows:     setx GEMINI_API_KEY "AIzaSy..."
-                    (then close and reopen your terminal)
-   Streamlit Cloud deployment: add GEMINI_API_KEY under the app's
-   "Secrets" panel instead — st.secrets below picks it up automatically.
-
-Free tier limits (as of mid-2026): roughly 1,500 requests/day on Flash
-models — more than enough for a project/demo. Note: Google retires
-specific model versions periodically (this file was updated in July
-2026 after "gemini-2.5-flash" was retired for new users ahead of its
-originally announced date) — using the "gemini-flash-latest" alias
-below means Google always routes you to a current free Flash model
-instead of one that can suddenly disappear.
+Handles communication with the Google Gemini API and manages
+fallback responses when the AI service is unavailable.
 """
 
 import os
