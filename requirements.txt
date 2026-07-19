@@ -1,7 +1,2 @@
 streamlit
 google-genai
-
-
-https://github.com/masutageprajakta-lab/business-mentor-ai/blob/main/retriever.py
-
-https://business-mentor-ai-3kdjffkrlr2uitaant9kpc.streamlit.app/
